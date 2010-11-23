@@ -17,8 +17,8 @@ public class Tetrahedron : MonoBehaviour {
 		
 		Vector3 p0 = new Vector3(0,0,0);
 		Vector3 p1 = new Vector3(1,0,0);
-		Vector3 p2 = new Vector3(0.5f,0,Mathf.Sqrt(1.25f));
-		Vector3 p3 = new Vector3(0.5f,Mathf.Sqrt(1.25f),Mathf.Sqrt(1.25f)/2);
+		Vector3 p2 = new Vector3(0.5f,0,Mathf.Sqrt(0.75f));
+		Vector3 p3 = new Vector3(0.5f,Mathf.Sqrt(0.75f),Mathf.Sqrt(0.75f)/3);
 		
 		Mesh mesh = meshFilter.sharedMesh;
 		mesh.Clear();
