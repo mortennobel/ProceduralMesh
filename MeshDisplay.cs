@@ -2,7 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 /**
- * Utility class that let you see normals and tangent vectors for a mesh
+ * Utility class that let you see normals and tangent vectors for a mesh.
+ * This is really useful when debugging mesh appearance
  */ 
 [RequireComponent (typeof (MeshFilter))]
 public class MeshDisplay : MonoBehaviour {
@@ -26,17 +27,17 @@ public class MeshDisplay : MonoBehaviour {
 		}
         bool doShowNormals = showNormals && mesh.normals.Length==mesh.vertices.Length;
         bool doShowTangents = showTangents && mesh.tangents.Length==mesh.vertices.Length;
-		Matrix4x4 m = transform.localToWorldMatrix;
+
 		foreach (int idx in mesh.triangles){
-			Vector3 vertex = m*mesh.vertices[idx];
+			Vector3 vertex = transform.TransformPoint(mesh.vertices[idx]);
 			
 			if (doShowNormals){
-				Vector3 normal = m*mesh.normals[idx];
+				Vector3 normal = transform.TransformDirection(mesh.normals[idx]);
 				Gizmos.color = normalColor;
 				Gizmos.DrawLine(vertex, vertex+normal*displayLengthScale);
 			}
 			if (doShowTangents){
-				Vector3 tangent = m*mesh.tangents[idx];
+				Vector3 tangent = transform.TransformDirection(mesh.tangents[idx]);
 				Gizmos.color = tangentColor;
 				Gizmos.DrawLine(vertex, vertex+tangent*displayLengthScale);
 			}

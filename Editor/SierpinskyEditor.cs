@@ -5,8 +5,6 @@ using System.Collections;
 
 [CustomEditor (typeof (Sierpinsky))] 
 public class SierpinskyEditor : Editor {
-	
-	
 	[MenuItem ("GameObject/Create Other/Sierpinsky")]
 	static void Create(){
 		GameObject gameObject = new GameObject("Sierpinsky");
@@ -30,6 +28,7 @@ public class SierpinskyEditor : Editor {
 		base.DrawDefaultInspector();
 		EditorGUILayout.BeginHorizontal ();
 		
+		// Rebuild mesh when user click the Rebuild button
 		if (GUILayout.Button("Rebuild")){
 			obj.Rebuild();
 		}

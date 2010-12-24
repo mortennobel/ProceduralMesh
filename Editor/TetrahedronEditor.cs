@@ -27,6 +27,7 @@ public class TetrahedronEditor : Editor {
 		base.DrawDefaultInspector();
 		EditorGUILayout.BeginHorizontal ();
 		
+		// Rebuild mesh when user click the Rebuild button
 		if (GUILayout.Button("Rebuild")){
 			obj.Rebuild();
 		}
