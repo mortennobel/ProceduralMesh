@@ -78,6 +78,10 @@ public class Sierpinsky : MonoBehaviour {
 			return;
 		}
 		Mesh mesh = meshFilter.sharedMesh;
+		if (mesh == null){
+			meshFilter.mesh = new Mesh();
+			mesh = meshFilter.sharedMesh;
+		}
 		mesh.Clear();
 		Vector3 []verticesV = new Vector3[vertices.Count];
 		int[] indicesV = new int[indices.Count];

@@ -21,6 +21,10 @@ public class Tetrahedron : MonoBehaviour {
 		Vector3 p3 = new Vector3(0.5f,Mathf.Sqrt(0.75f),Mathf.Sqrt(0.75f)/3);
 		
 		Mesh mesh = meshFilter.sharedMesh;
+		if (mesh == null){
+			meshFilter.mesh = new Mesh();
+			mesh = meshFilter.sharedMesh;
+		}
 		mesh.Clear();
 		if (sharedVertices){
 			mesh.vertices = new Vector3[]{p0,p1,p2,p3};

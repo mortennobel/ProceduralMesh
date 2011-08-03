@@ -1,10 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-/**
- * Utility class that let you see normals and tangent vectors for a mesh.
- * This is really useful when debugging mesh appearance
- */ 
+/// <summary>
+/// Utility class that let you see normals and tangent vectors for a mesh.
+/// This is really useful when debugging mesh appearance
+/// </summary>
 [RequireComponent (typeof (MeshFilter))]
 public class MeshDisplay : MonoBehaviour {
 	public bool showNormals = true;
